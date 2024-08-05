@@ -1,0 +1,749 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --50: #eefff5;
+  --100: #d7ffea;
+  --200: #b2ffd6;
+  --300: #76ffb7;
+  --400: #33f590;
+  --500: #09de6f;
+  --600: #00c760;
+  --700: #049149;
+  --800: #0a713d;
+  --900: #0a5d34;
+  --950: #00341b;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  max-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: var(--300);
+  width: 100%;
+}
+
+header aside {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 20rem;
+}
+
+header .icon {
+  max-width: 75px;
+  max-width: 75px;
+  border-radius: 50%;
+}
+
+header .github {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+nav {
+  flex-grow: 1;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.active {
+  background-image: linear-gradient(var(--500), var(--600));
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.active:hover {
+  background-image: linear-gradient(var(--600), var(--700));
+  cursor: pointer;
+}
+
+.active:active {
+  background-image: linear-gradient(var(--700), var(--800));
+}
+
+.active a {
+  color: white;
+}
+
+main {
+  width: 100%;
+}
+
+section {
+  min-height: 100vh;
+}
+
+#home {
+  background-image: url("../img/fondo.jpg");
+  background-size: cover;
+}
+
+.welcome {
+  background-color: rgb(0, 0, 0, 0.75);
+  height: 100vh;
+  display: flex;
+  color: white;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: 300;
+}
+
+.welcome h2 {
+  font-size: 4rem;
+  font-weight: 300;
+  margin-top: 5rem;
+}
+
+.welcome h3 {
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+#about {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+#about h2 {
+  font-size: 4rem;
+  color: var(--950);
+  text-align: center;
+}
+
+#about picture img {
+  margin-top: 1rem;
+  max-width: 400px;
+  max-height: 400px;
+  border-radius: 50%;
+}
+
+.presentacion {
+  display: flex;
+}
+
+.presentacion .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5rem 10rem;
+}
+
+.description p {
+  flex-grow: 1;
+  align-self: end;
+  margin-top: 3rem;
+  font-weight: 500;
+}
+
+hr {
+  background-color: var(--800);
+  height: 5px;
+}
+
+.skills h3 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--950);
+}
+
+.skills ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.skills ul li {
+  list-style: none;
+  transition: transform 0.2s ease-out;
+}
+
+.skills ul li:hover {
+  cursor: pointer;
+  transform: translateY(-0.5rem);
+}
+
+.skills img {
+  max-width: 50px;
+}
+
+#projects {
+  background-color: var(--50);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+#projects h2 {
+  color: var(--950);
+  font-size: 3rem;
+}
+
+.carrusel {
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.card {
+  height: 55vh;
+  width: 45vh;
+  margin: 0 2rem;
+  border-radius: 5px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--200);
+}
+
+.card picture img {
+  width: 100%;
+  height: 100%;
+}
+
+.card .texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
+}
+
+.card h3 {
+  color: var(--950);
+  font-size: 1.5rem;
+}
+
+.card p {
+  color: var(--900);
+  font-weight: 500;
+}
+
+.card a {
+  text-decoration: none;
+  color: var(--950);
+  font-size: 1.2rem;
+  background-image: linear-gradient(var(--500), var(--600));
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.card a:hover {
+  background-image: linear-gradient(var(--600), var(--700));
+  cursor: pointer;
+}
+
+.card a:active {
+  background-image: linear-gradient(var(--700), var(--800));
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+footer h2 {
+  color: var(--950);
+  font-size: 3rem;
+}
+
+.footer-title {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-rrss {
+  background-color: var(--700);
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.rrss {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 40vh;
+}
+
+.rrss picture {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background-color: var(--400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rrss picture img {
+  max-width: 40px;
+}
+
+.rrss h3 {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.rrss p {
+  color: white;
+  font-weight: 300;
+}
+
+.rrss a {
+  color: var(--950);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.rrss a:hover {
+  color: var(--900);
+}
+
+@media (width >= 1200px) and (width < 1400px) {
+  .welcome {
+    height: 80vh;
+  }
+
+  section {
+    min-height: 80vh;
+  }
+  .card {
+    height: 45vh;
+    width: 35vh;
+  }
+
+  footer {
+    height: 80vh;
+  }
+
+  .contact-rrss {
+    height: 60vh;
+  }
+
+  .rrss {
+    height: 30vh;
+  }
+}
+
+@media (width >= 992px) and (width < 1200px) {
+  .welcome {
+    height: 70vh;
+  }
+
+  section {
+    min-height: 70vh;
+  }
+  .card {
+    height: 35vh;
+    width: 25vh;
+  }
+
+  footer {
+    height: 70vh;
+  }
+
+  .contact-rrss {
+    height: 50vh;
+  }
+
+  .rrss {
+    height: 30vh;
+  }
+
+  #about h2 {
+    font-size: 4rem;
+    color: var(--950);
+    text-align: center;
+  }
+
+  #about picture img {
+    margin-top: 1rem;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 50%;
+  }
+
+  .presentacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (width >= 768px) and (width < 992px) {
+  header {
+    flex-direction: column;
+    max-height: 500px;
+    gap: 1rem;
+  }
+
+  header aside {
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+    box-shadow: 2px 0 10px black;
+    padding: 0.5rem;
+  }
+
+  nav {
+    width: 100%;
+  }
+  nav ul {
+    justify-content: space-around;
+  }
+
+  nav ul li a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+  }
+
+  .active {
+    padding: 0.8rem;
+  }
+
+  .welcome {
+    height: 70vh;
+  }
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 300;
+  }
+
+  .welcome h2 {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-top: 5rem;
+  }
+
+  .welcome h3 {
+    font-weight: 300;
+    font-size: 1.5rem;
+  }
+
+  section {
+    min-height: 70vh;
+  }
+
+  #about h2 {
+    font-size: 4rem;
+    color: var(--950);
+    text-align: center;
+  }
+
+  #about picture img {
+    margin-top: 1rem;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 50%;
+  }
+
+  .presentacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .presentacion .description {
+    padding: 5rem 5rem;
+  }
+
+  .carrusel {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    height: 35vh;
+    width: 25vh;
+    margin: 1rem 1.5rem;
+  }
+
+  footer {
+    height: 70vh;
+  }
+
+  .contact-rrss {
+    height: 50vh;
+  }
+
+  .rrss {
+    height: 30vh;
+  }
+}
+
+@media (width >= 576px) and (width < 768px) {
+  header {
+    flex-direction: column;
+    max-height: 500px;
+    gap: 1rem;
+  }
+
+  header aside {
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+    box-shadow: 2px 0 10px black;
+    padding: 0.5rem;
+  }
+
+  nav {
+    width: 100%;
+  }
+  nav ul {
+    justify-content: space-around;
+  }
+
+  nav ul li a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+  }
+
+  .active {
+    padding: 0.8rem;
+  }
+
+  .welcome {
+    height: 70vh;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 300;
+  }
+
+  .welcome h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-top: 5rem;
+  }
+
+  .welcome h3 {
+    font-weight: 300;
+    font-size: 1.2rem;
+  }
+
+  section {
+    min-height: 70vh;
+  }
+
+  #about h2 {
+    font-size: 4rem;
+    color: var(--950);
+    text-align: center;
+  }
+
+  #about picture img {
+    margin-top: 1rem;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 50%;
+  }
+
+  .presentacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .presentacion .description {
+    padding: 5rem 5rem;
+  }
+
+  .carrusel {
+    margin-top: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    height: 35vh;
+    width: 30vh;
+    margin: 1rem 1.5rem;
+  }
+
+  footer {
+    height: 70vh;
+  }
+
+  .contact-rrss {
+    height: 50vh;
+  }
+
+  .rrss {
+    height: 30vh;
+  }
+}
+
+@media (width < 576px) {
+  header {
+    flex-direction: column;
+    max-height: 500px;
+    gap: 1rem;
+  }
+
+  header aside {
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+    box-shadow: 2px 0 10px black;
+    padding: 0.5rem;
+  }
+
+  nav {
+    width: 100%;
+  }
+  nav ul {
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+
+  nav ul li a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+  }
+
+  .active {
+    padding: 0.8rem;
+  }
+
+  .welcome {
+    height: 70vh;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+
+  .welcome h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 5rem;
+  }
+
+  .welcome h3 {
+    font-weight: 300;
+    font-size: 1rem;
+  }
+
+  section {
+    min-height: 70vh;
+  }
+
+  #about h2 {
+    font-size: 4rem;
+    color: var(--950);
+    text-align: center;
+  }
+
+  #about picture img {
+    margin-top: 1rem;
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 50%;
+  }
+
+  .titles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .presentacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .presentacion .description {
+    padding: 5rem 1rem;
+  }
+
+  .skills ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .carrusel {
+    margin-top: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    height: 40vh;
+    width: 30vh;
+    margin: 1rem 1.5rem;
+  }
+
+  footer {
+    height: 70vh;
+  }
+
+  .contact-rrss {
+    margin-top: 2rem;
+    height: max-content;
+    flex-direction: column;
+    padding: 2rem 0;
+  }
+
+  .rrss {
+    height: 30vh;
+  }
+}

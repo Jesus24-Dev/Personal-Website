@@ -2,9 +2,9 @@
 import { useState, useEffect, useCallback } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Home from './components/pages/Home';
-// import AboutSection from './components/sections/About'; 
-// import ProjectsSection from './components/sections/Projects'; 
-// import SkillsSection from './components/sections/Skills'; 
+import About from './components/pages/About'; 
+// import ProjectsSection from './components/pages/Projects'; 
+// import SkillsSection from './components/pages/Skills'; 
 import Navbar from './components/Header/Navbar/Navbar';
 
 export type SectionType = 'Home' | 'About' | 'Projects' | 'Skills';
@@ -62,7 +62,8 @@ export default function App() {
       <main className="snap-y snap-mandatory h-screen overflow-y-auto">
         <AnimatePresence>
           <Home id="Home" />
-          {/* <About id="About" /> 
+          <About id="About" /> 
+          {/* 
           <Projects id="Projects" /> 
           <Skills id="Skills" />  */}
         </AnimatePresence>

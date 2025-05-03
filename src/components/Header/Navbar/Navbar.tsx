@@ -87,15 +87,15 @@ export default function Navbar({ activeSection, scrollToSection }: NavbarProps) 
                     onClick={() => handleNavClick(item.id)}
                     className={`px-4 py-2 block relative font-medium text-sm lg:text-base ${
                       activeSection === item.id 
-                        ? 'text-lime-400' 
-                        : 'text-white/90 hover:text-lime-300'
+                        ? 'text-lime-200' 
+                        : 'text-white/90 hover:text-lime-100'
                     } transition-colors duration-200`}
                   >
                     {item.label}
                     {activeSection === item.id && (
                       <motion.span 
                         layoutId="navIndicator"
-                        className="absolute left-4 right-4 bottom-1 h-0.5 bg-lime-400"
+                        className="absolute left-4 right-4 bottom-1 h-0.5 bg-lime-200"
                         initial={false}
                         transition={{ type: 'spring', bounce: 0.25, duration: 0.6 }}
                       />

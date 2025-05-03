@@ -1,6 +1,6 @@
 import Presentation from './Presentation';
 import IconList from './IconList';
-import ScrollWrapper from '../../ScrollWrapper';
+import ScrollWrapper from '../../ui/ScrollWrapper';
 
 export default function Section() {
   return (

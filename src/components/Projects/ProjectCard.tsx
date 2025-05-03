@@ -1,3 +1,15 @@
+import { motion } from 'framer-motion';
+const hoverVariants = {
+  hover: {
+    y: -10,
+    transition: { 
+      type: 'spring',
+      stiffness: 300,
+      damping: 10
+    }
+  }
+};
+
 export interface ProjectCardProps {
   title: string;
   category: string;
@@ -6,32 +18,55 @@ export interface ProjectCardProps {
   imageUrl: string;
 }
 
-function ProjectCard({ title, category, link, description, imageUrl }: ProjectCardProps) {
+export default function ProjectCard({ title, category, link, description, imageUrl }: ProjectCardProps) {
   return (
-    <article className="relative h-72 w-64 sm:h-80 sm:w-72 md:h-96 md:w-80 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+    <motion.article 
+      className="relative h-72 w-64 sm:h-80 sm:w-72 md:h-96 md:w-80 rounded-2xl overflow-hidden shadow-lg"
+      variants={hoverVariants}
+      whileHover="hover"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+      transition={{ duration: 0.6 }}
+    >
       <div 
         className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
         style={{ backgroundImage: `url(${imageUrl})` }}
-      ></div>
+      />
       
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 group-hover:from-black/80 group-hover:via-black/50 group-hover:to-black/20 transition-all duration-300 rounded-2xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 group-hover:from-black/80 group-hover:via-black/50 group-hover:to-black/20 transition-all duration-300 rounded-2xl" />
       
       <div className="relative h-full flex flex-col justify-between p-5 sm:p-6">
         <div>
-          <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">
+          <motion.h2 
+            className="text-xl sm:text-2xl font-bold text-white mb-2"
+            whileHover={{ x: 5 }}
+          >
             {title}
-          </h2>
+          </motion.h2>
           
-          <span className="inline-block bg-lime-500/20 text-lime-300 text-xs sm:text-sm font-medium px-2.5 py-0.5 rounded-full mb-3">
+          <motion.span 
+            className="inline-block bg-lime-500/20 text-lime-300 text-xs sm:text-sm font-medium px-2.5 py-0.5 rounded-full mb-3"
+            whileHover={{ scale: 1.05 }}
+          >
             {category}
-          </span>
+          </motion.span>
 
-          <p className="text-gray-200 text-xs sm:text-sm leading-relaxed line-clamp-3 sm:line-clamp-4">
+          <motion.p 
+            className="text-gray-200 text-xs sm:text-sm leading-relaxed line-clamp-3 sm:line-clamp-4"
+            whileHover={{ y: -2 }}
+          >
             {description}
-          </p>
+          </motion.p>
         </div>
         
-        <div className="flex flex-wrap justify-end gap-2 sm:gap-3">
+        <motion.div 
+          className="flex flex-wrap justify-end gap-2 sm:gap-3"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+        >
+            <div className="flex flex-wrap justify-end gap-2 sm:gap-3">
           <a 
             href={link} 
             target="_blank" 
@@ -52,9 +87,8 @@ function ProjectCard({ title, category, link, description, imageUrl }: ProjectCa
             </svg>
           </a>
         </div> 
+        </motion.div>
       </div>                               
-    </article>
+    </motion.article>
   );
 }
-
-export default ProjectCard;

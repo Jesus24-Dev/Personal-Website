@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Home from './components/pages/Home';
 import About from './components/pages/About'; 
-// import ProjectsSection from './components/pages/Projects'; 
+import Projects from './components/pages/Projects'; 
 // import SkillsSection from './components/pages/Skills'; 
 import Navbar from './components/Header/Navbar/Navbar';
 
@@ -63,8 +63,8 @@ export default function App() {
         <AnimatePresence>
           <Home id="Home" />
           <About id="About" /> 
-          {/* 
-          <Projects id="Projects" /> 
+          <Projects id="Projects" />
+          {/*           
           <Skills id="Skills" />  */}
         </AnimatePresence>
       </main>

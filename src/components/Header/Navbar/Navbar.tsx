@@ -82,7 +82,7 @@ export default function Navbar({ activeSection, scrollToSection }: NavbarProps) 
                 >
                   <button
                     onClick={() => handleNavClick(item.id)}
-                    className={`px-4 py-2 block relative font-medium text-sm lg:text-base ${
+                    className={`px-4 py-2 block relative font-medium text-sm lg:text-base font-roboto ${
                       activeSection === item.id 
                         ? 'text-lime-200' 
                         : 'text-white/90 hover:text-lime-100'

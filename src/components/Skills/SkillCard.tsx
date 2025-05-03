@@ -55,7 +55,7 @@ export default function SkillCard({ img, name }: SkillCardProps) {
       </motion.div>           
       
       <motion.h3 
-        className="relative z-10 text-white font-bold text-xl md:text-2xl tracking-tight text-center"
+        className="relative z-10 text-white font-bold text-xl md:text-2xl tracking-tight text-center font-roboto"
         whileHover={{ scale: 1.05 }}
       >
         {name}

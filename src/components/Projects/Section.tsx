@@ -36,13 +36,13 @@ export default function Section() {
           variants={titleVariants}
         >
           <motion.span 
-            className="inline-block text-lime-200 font-medium mb-3"
+            className="inline-block text-lime-200 font-medium mb-3 font-roboto"
             variants={titleVariants}
           >
             Portfolio
           </motion.span>
           <motion.h2 
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-bebas"
             variants={titleVariants}
           >
             My <span className="text-lime-200">Creative Works</span>

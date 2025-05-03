@@ -16,10 +16,10 @@ function NavbarCard() {
             </div>
             
             <div className="text-white overflow-hidden">
-                <strong className="block font-semibold text-lg group-hover:text-lime-300 transition-colors duration-300">
+                <strong className="font-roboto block font-semibold text-lg group-hover:text-lime-300 transition-colors duration-300">
                     Jesus Sirit
                 </strong>
-                <p className="text-sm text-white/80 group-hover:text-white/90 -translate-y-1 group-hover:translate-y-0 transition-all duration-500">
+                <p className="font-roboto text-sm text-white/80 group-hover:text-white/90 -translate-y-1 group-hover:translate-y-0 transition-all duration-500">
                     FullStack Developer
                 </p>
             </div>

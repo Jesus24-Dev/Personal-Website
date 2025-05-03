@@ -26,7 +26,6 @@ export default function Navbar({ activeSection, scrollToSection }: NavbarProps) 
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Detección responsive mejorada
   useEffect(() => {
     const handleResize = () => {
       const mobile = window.innerWidth < 1024;
@@ -39,7 +38,6 @@ export default function Navbar({ activeSection, scrollToSection }: NavbarProps) 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Cierra el menú al hacer clic en un ítem (mobile)
   const handleNavClick = (id: SectionType) => {
     setIsOpen(false);
     scrollToSection(id);
@@ -65,7 +63,6 @@ export default function Navbar({ activeSection, scrollToSection }: NavbarProps) 
         </svg>
       </motion.button>
       
-      {/* Menú de Navegación */}
       <AnimatePresence>
         {(isOpen || !isMobile) && (
           <motion.div

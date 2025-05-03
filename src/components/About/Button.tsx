@@ -22,8 +22,9 @@ export default function Button({img, text, color, link}: ButtonProps) {
   return (
     <motion.div variants={buttonVariants}>
       <motion.a 
-        href={link} 
-        className={`${colorClasses[color]} rounded-lg py-2 px-5 sm:py-3 sm:px-6 w-full sm:w-auto flex items-center justify-center gap-2 sm:gap-3 transition-all duration-200`}
+        href={link}
+        target="_blank" 
+        className={`${colorClasses[color]} font-roboto rounded-lg py-2 px-5 sm:py-3 sm:px-6 w-full sm:w-auto flex items-center justify-center gap-2 sm:gap-3 transition-all duration-200`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >

@@ -39,21 +39,21 @@ export default function ProjectCard({ title, category, link, description, imageU
       <div className="relative h-full flex flex-col justify-between p-5 sm:p-6">
         <div>
           <motion.h2 
-            className="text-xl sm:text-2xl font-bold text-white mb-2"
+            className="text-xl sm:text-2xl font-bold text-white mb-2 font-roboto"
             whileHover={{ x: 5 }}
           >
             {title}
           </motion.h2>
           
           <motion.span 
-            className="inline-block bg-lime-500/20 text-lime-300 text-xs sm:text-sm font-medium px-2.5 py-0.5 rounded-full mb-3"
+            className="font-bebas inline-block bg-lime-500/20 text-lime-300 text-xs sm:text-sm font-medium px-2.5 py-0.5 rounded-full mb-3"
             whileHover={{ scale: 1.05 }}
           >
             {category}
           </motion.span>
 
           <motion.p 
-            className="text-gray-200 text-xs sm:text-sm leading-relaxed line-clamp-3 sm:line-clamp-4"
+            className="text-gray-200 text-xs sm:text-sm leading-relaxed line-clamp-3 sm:line-clamp-4 font-roboto"
             whileHover={{ y: -2 }}
           >
             {description}
@@ -79,7 +79,7 @@ export default function ProjectCard({ title, category, link, description, imageU
             href={link} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-white font-medium bg-transparent border border-lime-400 hover:bg-lime-600/30 hover:border-lime-600 active:bg-lime-700/40 py-1.5 px-3 sm:py-2 sm:px-4 rounded-lg text-xs sm:text-sm transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 flex items-center gap-1"
+            className="font-roboto text-white font-medium bg-transparent border border-lime-400 hover:bg-lime-600/30 hover:border-lime-600 active:bg-lime-700/40 py-1.5 px-3 sm:py-2 sm:px-4 rounded-lg text-xs sm:text-sm transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 flex items-center gap-1"
           >
             Code
             <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -69,7 +69,7 @@ export default function Section() {
         variants={headerVariants}
       >
         <motion.h2 
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 mb-3"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 mb-3 font-bebas"
           variants={headerVariants}
         >
           Skills

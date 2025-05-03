@@ -1,30 +1,23 @@
 [
   {
-    "title": "My first Project",
-    "category": "FullStack",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-    "link": "#",
-    "imageUrl": "/img/projects/example.jpg"
-  },
-  {
-    "title": "My Second Project",
+    "title": "Product Management - API Rest",
     "category": "Backend",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-    "link": "#",
-    "imageUrl": "/img/projects/example.jpg"
+    "description": "This project is a RESTful API built with Spring Boot, designed for managing products, categories, users, and orders.",
+    "link": "https://github.com/Jesus24-Dev/SpringBoot-APIRest-ProductManagement",
+    "imageUrl": "/img/projects/apirest.webp"
   },
   {
-    "title": "My Last project",
-    "category": "FullStack",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-    "link": "#",
-    "imageUrl": "/img/projects/example.jpg"
+    "title": "Medical Appointments Manager",
+    "category": "Backend",
+    "description": "This is a web application developed using Spring Boot that allows patients to register, view available doctors, and schedule or cancel medical appointments.",
+    "link": "https://github.com/Jesus24-Dev/SpringBoot-Medical-Appointments-Manager",
+    "imageUrl": "/img/projects/medical.webp"
   },
   {
-    "title": "Another One",
+    "title": "Real-Time Chat Application",
     "category": "FullStack",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-    "link": "#",
-    "imageUrl": "/img/projects/example.jpg"
+    "description": "Real-time messaging app for public rooms and private chats. Built the backend with Node.js + TypeScript, Express, Socket.IO and the frontend with React + TailwindCSS", 
+    "link": "https://github.com/Jesus24-Dev/real-time-chat-ReactTS-Socket.io",
+    "imageUrl": "/img/projects/chat.webp"
   }
 ]

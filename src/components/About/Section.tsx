@@ -34,9 +34,9 @@ export default function Section() {
               className="flex flex-wrap justify-center sm:justify-start gap-3 sm:gap-4"
               variants={containerVariants}
             >
-              <Button link={'#'} color={'red'} img={'gmail'} text={'Gmail'}/>
-              <Button link={'#'} color={'blue'} img={'linkedin'} text={'LinkedIn'}/>
-              <Button link={'#'} color={'gray'} img={'github'} text={'Github'}/>
+              <Button link={'mailto:siritjesus24@gmail.com'} color={'red'} img={'gmail'} text={'Gmail'}/>
+              <Button link={'https://www.linkedin.com/in/jesús-sirit-b94037266/'} color={'blue'} img={'linkedin'} text={'LinkedIn'}/>
+              <Button link={'https://github.com/Jesus24-Dev'} color={'gray'} img={'github'} text={'Github'}/>
             </motion.div>
           </motion.article>                  
           <motion.aside 

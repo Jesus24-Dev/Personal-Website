@@ -1,6 +1,11 @@
 function NavbarCard() {
+
+    const goToGit = () => {
+        window.location.href = "https://github.com/Jesus24-Dev";
+    }
+
     return (
-        <aside className="group flex items-center gap-3 w-fit px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer">
+        <aside className="group flex items-center gap-3 w-fit px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer" onClick={goToGit}>
             <div className="relative">
                 <img 
                     src="/img/Avatar.png" 

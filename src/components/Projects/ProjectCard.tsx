@@ -67,14 +67,14 @@ export default function ProjectCard({ title, category, link, description, imageU
           transition={{ delay: 0.3 }}
         >
             <div className="flex flex-wrap justify-end gap-2 sm:gap-3">
-          <a 
+          {/* <a 
             href={link} 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-lime-50 font-medium bg-lime-600 hover:bg-lime-700 active:bg-lime-800 py-1.5 px-3 sm:py-2 sm:px-4 rounded-lg text-xs sm:text-sm transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
           >
             View Demo
-          </a>
+          </a> */}
           <a 
             href={link} 
             target="_blank" 

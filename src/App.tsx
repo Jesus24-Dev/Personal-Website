@@ -6,8 +6,9 @@ import About from './components/pages/About';
 import Projects from './components/pages/Projects'; 
 import Skills from './components/pages/Skills'; 
 import Navbar from './components/Header/Navbar/Navbar';
+import Contact from './components/pages/Contact';
 
-export type SectionType = 'Home' | 'About' | 'Projects' | 'Skills';
+export type SectionType = 'Home' | 'About' | 'Projects' | 'Skills' | 'Contact';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState<SectionType>('Home');
@@ -61,6 +62,7 @@ export default function App() {
           <About id="About" /> 
           <Projects id="Projects" />    
           <Skills id="Skills" /> 
+          <Contact id="Contact"/>
         </AnimatePresence>
       </main>
     </div>

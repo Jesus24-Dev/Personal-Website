@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import NavbarCard from './NavbarCard';
 
-export type SectionType = 'Home' | 'About' | 'Projects' | 'Skills';
+export type SectionType = 'Home' | 'About' | 'Projects' | 'Skills' | 'Contact';
 
 export interface NavItem {
   id: SectionType;
@@ -19,7 +19,8 @@ const NAV_ITEMS: { id: SectionType; label: string }[] = [
   { id: 'Home', label: 'Home' },
   { id: 'About', label: 'About' },
   { id: 'Projects', label: 'Projects' },
-  { id: 'Skills', label: 'Skills' }
+  { id: 'Skills', label: 'Skills' },
+  { id: 'Contact', label: 'Contact' }
 ];
 
 export default function Navbar({ activeSection, scrollToSection }: NavbarProps) {
@@ -47,7 +48,6 @@ export default function Navbar({ activeSection, scrollToSection }: NavbarProps) 
     <nav className="flex flex-wrap items-center justify-between py-3 fixed w-full top-0 z-50 bg-slate-950/95 backdrop-blur-sm px-4 lg:px-8 border-b border-slate-800/50">
       <NavbarCard />
       
-      {/* Botón Hamburguesa (Mobile) */}
       <motion.button
         className="lg:hidden p-2 rounded-md text-lime-400 focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}

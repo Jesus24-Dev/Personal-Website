@@ -1,29 +1,21 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import NavbarCard from './NavbarCard';
+import LanguageSelector from '../../LanguageSelector';
 
 export type SectionType = 'Home' | 'About' | 'Projects' | 'Skills' | 'Contact';
 
-export interface NavItem {
-  id: SectionType;
-  label: string;
-  icon?: React.ReactNode;
-}
 interface NavbarProps {
   activeSection: SectionType;
   scrollToSection: (id: SectionType) => void;
 }
 
-const NAV_ITEMS: { id: SectionType; label: string }[] = [
-  { id: 'Home', label: 'Home' },
-  { id: 'About', label: 'About' },
-  { id: 'Projects', label: 'Projects' },
-  { id: 'Skills', label: 'Skills' },
-  { id: 'Contact', label: 'Contact' }
-];
+const NAV_SECTIONS: SectionType[] = ['Home', 'About', 'Projects', 'Skills', 'Contact'];
 
 export default function Navbar({ activeSection, scrollToSection }: NavbarProps) {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -33,7 +25,7 @@ export default function Navbar({ activeSection, scrollToSection }: NavbarProps) 
       setIsMobile(mobile);
       if (!mobile) setIsOpen(false);
     };
-    
+
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -47,7 +39,7 @@ export default function Navbar({ activeSection, scrollToSection }: NavbarProps) 
   return (
     <nav className="flex flex-wrap items-center justify-between py-3 fixed w-full top-0 z-50 bg-slate-950/95 backdrop-blur-sm px-4 lg:px-8 border-b border-slate-800/50">
       <NavbarCard />
-      
+
       <motion.button
         className="lg:hidden p-2 rounded-md text-lime-400 focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
@@ -62,7 +54,7 @@ export default function Navbar({ activeSection, scrollToSection }: NavbarProps) 
           )}
         </svg>
       </motion.button>
-      
+
       <AnimatePresence>
         {(isOpen || !isMobile) && (
           <motion.div
@@ -73,23 +65,23 @@ export default function Navbar({ activeSection, scrollToSection }: NavbarProps) 
             className={`${isOpen ? 'block' : 'hidden'} w-full lg:flex lg:w-auto lg:items-center`}
           >
             <ul className="flex flex-col lg:flex-row justify-center lg:justify-end items-center gap-1 lg:gap-4 mt-4 lg:mt-0 w-full">
-              {NAV_ITEMS.map((item) => (
+              {NAV_SECTIONS.map((section) => (
                 <motion.li 
-                  key={item.id}
+                  key={section}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: 'spring', stiffness: 400 }}
                 >
                   <button
-                    onClick={() => handleNavClick(item.id)}
+                    onClick={() => handleNavClick(section)}
                     className={`px-4 py-2 block relative font-medium text-sm lg:text-base font-roboto ${
-                      activeSection === item.id 
+                      activeSection === section 
                         ? 'text-lime-200' 
                         : 'text-white/90 hover:text-lime-100'
                     } transition-colors duration-200`}
                   >
-                    {item.label}
-                    {activeSection === item.id && (
+                    {t(`nav.${section.toLowerCase()}`)}
+                    {activeSection === section && (
                       <motion.span 
                         layoutId="navIndicator"
                         className="absolute left-4 right-4 bottom-1 h-0.5 bg-lime-200"
@@ -100,6 +92,9 @@ export default function Navbar({ activeSection, scrollToSection }: NavbarProps) 
                   </button>
                 </motion.li>
               ))}
+              <li>
+                <LanguageSelector />
+              </li>
             </ul>
           </motion.div>
         )}

@@ -1,5 +1,6 @@
+import { useTranslation } from 'react-i18next';
 function NavbarCard() {
-
+    const { t } = useTranslation();
     const goToGit = () => {
         window.location.href = "https://github.com/Jesus24-Dev";
     }
@@ -17,10 +18,10 @@ function NavbarCard() {
             
             <div className="text-white overflow-hidden">
                 <strong className="font-roboto block font-semibold text-lg group-hover:text-lime-300 transition-colors duration-300">
-                    Jesus Sirit
+                    {t("navCard.name")}
                 </strong>
                 <p className="font-roboto text-sm text-white/80 group-hover:text-white/90 -translate-y-1 group-hover:translate-y-0 transition-all duration-500">
-                    FullStack Developer
+                    {t("navCard.role")}
                 </p>
             </div>
             

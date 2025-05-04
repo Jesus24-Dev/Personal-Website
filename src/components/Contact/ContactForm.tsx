@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { FiSend, FiUser, FiMail, FiMessageSquare } from 'react-icons/fi';
 import emailjs from '@emailjs/browser';
 import toast, { Toaster } from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
 
 const formVariants = {
   hidden: { opacity: 0 },
@@ -31,6 +32,7 @@ const itemVariants = {
 };
 
 export default function ContactForm() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -55,7 +57,7 @@ export default function ContactForm() {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
-      toast.success('Message sent successfully! ✅', {
+      toast.success(`${t("contact.msgSuccess")} ✅`, {
         style: {
           background: '#334155',
           color: '#d9f99d',
@@ -64,7 +66,7 @@ export default function ContactForm() {
       });
       setFormData({ name: '', email: '', message: '' });
     } catch (error: any) {
-      toast.error(`Failed to send message: ${error.text || 'Please try again.'} ❌`, {
+      toast.error(`${t("contact.msgError")}: ${error.message} ❌`, {
         style: {
           background: '#334155',
           color: '#fca5a5',
@@ -99,7 +101,7 @@ export default function ContactForm() {
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-lime-200 mb-3 font-bebas"
           variants={itemVariants}
         >
-          Let's Connect
+          {t("contact.title")}
         </motion.h2>
         <motion.div 
           className="w-20 h-1 bg-lime-300 mx-auto"
@@ -115,7 +117,7 @@ export default function ContactForm() {
       >
         <motion.div variants={itemVariants}>
           <label htmlFor="name" className="font-roboto block text-sm font-medium text-lime-100 mb-2">
-            Name
+          {t("contact.labelName")}
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -127,7 +129,7 @@ export default function ContactForm() {
               value={formData.name}
               onChange={(e) => setFormData({...formData, name: e.target.value})}
               className="font-roboto block w-full pl-10 pr-3 py-3 bg-slate-800/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-lime-300 focus:border-transparent transition-all"
-              placeholder="Your name"
+              placeholder={t("contact.placeholderName")}
               required
               disabled={isLoading}
             />
@@ -136,7 +138,7 @@ export default function ContactForm() {
 
         <motion.div variants={itemVariants}>
           <label htmlFor="email" className="font-roboto block text-sm font-medium text-lime-100 mb-2">
-            Email
+          {t("contact.labelEmail")}
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -148,7 +150,7 @@ export default function ContactForm() {
               value={formData.email}
               onChange={(e) => setFormData({...formData, email: e.target.value})}
               className="font-roboto block w-full pl-10 pr-3 py-3 bg-slate-800/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-lime-300 focus:border-transparent transition-all"
-              placeholder="your.email@example.com"
+              placeholder={t("contact.placeholderEmail")}
               required
               disabled={isLoading}
             />
@@ -157,7 +159,7 @@ export default function ContactForm() {
 
         <motion.div variants={itemVariants}>
           <label htmlFor="message" className="block text-sm font-medium text-lime-100 mb-2 font-roboto">
-            Message
+          {t("contact.labelMessage")}
           </label>
           <div className="relative">
             <div className="absolute top-3 left-3">
@@ -169,7 +171,7 @@ export default function ContactForm() {
               value={formData.message}
               onChange={(e) => setFormData({...formData, message: e.target.value})}
               className="font-roboto block w-full pl-10 pr-3 py-3 bg-slate-800/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-lime-300 focus:border-transparent transition-all"
-              placeholder="Your message here..."
+              placeholder={t("contact.placeholderMessage")}
               required
               disabled={isLoading}
             />
@@ -195,7 +197,7 @@ export default function ContactForm() {
             disabled={isLoading}
           >
             <FiSend className="h-5 w-5" />
-            {isLoading ? 'Sending...' : 'Send Message'}
+            {isLoading ? t("contact.sendingMessageBtn") : t("contact.sendMessageBtn")}
           </motion.button>
         </motion.div>
       </motion.form>

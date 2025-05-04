@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+
 const hoverVariants = {
   hover: {
     y: -10,
@@ -11,14 +13,14 @@ const hoverVariants = {
 };
 
 export interface ProjectCardProps {
-  title: string;
+  id: string;
   category: string;
   link: string;
-  description: string;
   imageUrl: string;
 }
 
-export default function ProjectCard({ title, category, link, description, imageUrl }: ProjectCardProps) {
+export default function ProjectCard({id, category, link, imageUrl }: ProjectCardProps) {
+  const { t } = useTranslation();
   return (
     <motion.article 
       className="relative h-72 w-64 sm:h-80 sm:w-72 md:h-96 md:w-80 rounded-2xl overflow-hidden shadow-lg"
@@ -42,7 +44,7 @@ export default function ProjectCard({ title, category, link, description, imageU
             className="text-xl sm:text-2xl font-bold text-white mb-2 font-roboto"
             whileHover={{ x: 5 }}
           >
-            {title}
+            {t(`projects.${id}.title`)}
           </motion.h2>
           
           <motion.span 
@@ -56,7 +58,7 @@ export default function ProjectCard({ title, category, link, description, imageU
             className="text-gray-200 text-xs sm:text-sm leading-relaxed line-clamp-3 sm:line-clamp-4 font-roboto"
             whileHover={{ y: -2 }}
           >
-            {description}
+            {t(`projects.${id}.description`)}
           </motion.p>
         </div>
         
@@ -81,7 +83,7 @@ export default function ProjectCard({ title, category, link, description, imageU
             rel="noopener noreferrer"
             className="font-roboto text-white font-medium bg-transparent border border-lime-400 hover:bg-lime-600/30 hover:border-lime-600 active:bg-lime-700/40 py-1.5 px-3 sm:py-2 sm:px-4 rounded-lg text-xs sm:text-sm transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 flex items-center gap-1"
           >
-            Code
+            {t(`projectPage.code`)}
             <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
             </svg>

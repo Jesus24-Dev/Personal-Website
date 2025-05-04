@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import ProjectList from './ProjectList';
+import { useTranslation } from 'react-i18next';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -12,6 +13,7 @@ const containerVariants = {
   }
 };
 
+
 const titleVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -22,6 +24,7 @@ const titleVariants = {
 };
 
 export default function Section() {
+  const { t } = useTranslation();
   return (
     <motion.section 
       className="relative py-16 sm:py-20 lg:py-14 w-full"
@@ -39,13 +42,13 @@ export default function Section() {
             className="inline-block text-lime-200 font-medium mb-3 font-roboto"
             variants={titleVariants}
           >
-            Portfolio
+            {t("projectPage.subtitle")}
           </motion.span>
           <motion.h2 
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-bebas"
             variants={titleVariants}
           >
-            My <span className="text-lime-200">Creative Works</span>
+            {t("projectPage.prepo")} <span className="text-lime-200">{t("projectPage.title")}</span>
           </motion.h2>
           <motion.div 
             className="w-20 h-1 bg-lime-300 mx-auto"

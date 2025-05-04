@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from "react-i18next";
 
 export default function Presentation() {
+  const { t } = useTranslation();
   return (
     <div className="text-center space-y-2 sm:space-y-4 px-4">
       <motion.h3 
@@ -9,7 +11,7 @@ export default function Presentation() {
         animate={{ opacity: 0.9, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        Hello World! <span className="text-lime-200">It's me</span>
+        {t("header.welcome")} <span className="text-lime-200">{t("header.presentation")}</span>
       </motion.h3>
       
       <motion.h1 
@@ -19,7 +21,7 @@ export default function Presentation() {
         transition={{ type: 'spring', stiffness: 100, damping: 10, delay: 0.2 }}
         whileHover={{ scale: 1.02 }}
       >
-        Jesus Sirit
+        {t("header.name")}
       </motion.h1>
       
       <motion.h3 
@@ -28,7 +30,7 @@ export default function Presentation() {
         animate={{ opacity: 0.8 }}
         transition={{ delay: 0.4 }}
       >
-        FullStack <span className="font-medium text-lime-200">Developer</span>
+        {t("header.description")} <span className="font-medium text-lime-200">{t("header.role")}</span>
       </motion.h3>
     </div>
   );

@@ -27,6 +27,7 @@ const itemVariants = {
 };
 
 function ProjectList() {
+
   return (
     <motion.div
       className="grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center max-w-6xl mx-auto px-4"
@@ -45,8 +46,7 @@ function ProjectList() {
           }}
         >
           <ProjectCard 
-            title={project.title}
-            description={project.description}
+            id={project.id}
             category={project.category}
             link={project.link}
             imageUrl={project.imageUrl}

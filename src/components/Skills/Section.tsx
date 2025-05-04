@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import SkillCard from './SkillCard';
+import { useTranslation } from 'react-i18next';
 
 const techData = [
     { img: 'java', name: 'Java' },
@@ -56,6 +57,7 @@ const headerVariants = {
 };
 
 export default function Section() {
+  const { t } = useTranslation();
   return (
     <motion.section 
       className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
@@ -72,7 +74,7 @@ export default function Section() {
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 mb-3 font-bebas"
           variants={headerVariants}
         >
-          Skills
+          {t("skills.title")}
         </motion.h2>
         <motion.div 
           className="w-20 h-1 bg-slate-800 mx-auto"

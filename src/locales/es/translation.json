@@ -1,0 +1,62 @@
+{
+    "header": {
+        "welcome": "Hola mundo!",
+        "presentation": "Soy",
+        "description": "Desarrollador",
+        "name": "Jesús Sirit",
+        "role": "FullStack"
+    },
+
+    "nav": {
+        "home": "Inicio",
+        "about": "Sobre mí",
+        "projects": "Proyectos",
+        "skills": "Habilidades",
+        "contact": "Contacto"
+      },
+      "navCard": {
+          "name": "Jesús Sirit",
+          "role": "Desarrollador FullStack"
+      },
+      "about": {
+        "title": "Sobre mí",
+        "first-text": "Soy un desarrollador web enfocado en el desarrollo backend, especializado en Java (Spring Boot) y Node.js con TypeScript. Construyo APIs RESTful seguras y escalables, y también tengo experiencia con tecnologías frontend como React y TailwindCSS. Tengo destreza en trabajar con bases de datos relacionales como PostgreSQL, MySQL y SQLite, siempre aplicando las mejores prácticas en modelado de datos.",
+        "second-text": "Me apasiona resolver problemas complejos, escribir código limpio y aprender y mejorar continuamente."
+    },
+    "projectPage": {
+        "subtitle": "Portafolio",
+        "prepo": "Mis",
+        "title": "Trabajos Creativos",
+        "code": "Código"
+    },
+    "projects": {
+        "product_api": {
+          "title": "Gestión de Productos - API Rest",
+          "description": "Este proyecto es una API RESTful construida con Spring Boot para gestionar productos, categorías, usuarios y pedidos."
+        },
+        "medical_app": {
+          "title": "Gestor de Citas Médicas",
+          "description": "Aplicación web desarrollada con Spring Boot que permite a los pacientes registrarse, ver doctores disponibles y agendar o cancelar citas médicas."
+        },
+        "chat_app": {
+          "title": "Aplicación de Chat en Tiempo Real",
+          "description": "App de mensajería en tiempo real para salas públicas y chats privados. Backend con Node.js + TypeScript, Express, Socket.IO y frontend con React + TailwindCSS."
+        }
+      },
+    "skills": {
+        "title": "Habilidades"
+    },
+    "contact": {
+        "title": "Contáctame",
+        "labelName": "Nombre",
+        "placeholderName": "Su nombre",
+        "labelEmail": "Correo electrónico",
+        "placeholderEmail": "tucorreo@ejemplo.com",
+        "labelMessage": "Mensaje",
+        "placeholderMessage": "Su mensaje aquí...",
+        "sendMessageBtn": "Enviar mensaje",
+        "sendingMessageBtn": "Enviando...",
+        "msgError": "Error al enviar el correo. Inténtalo de nuevo",
+        "msgSuccess:": "!Mensaje enviado exitosamente!"
+    }
+}

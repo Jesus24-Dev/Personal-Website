@@ -1,0 +1,61 @@
+{
+    "header": {
+        "welcome": "Hello World!",
+        "presentation": "It's me",
+        "description": "FullStack",
+        "name": "Jesus Sirit",
+        "role": "Developer"
+    },
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "projects": "Projects",
+        "skills": "Skills",
+        "contact": "Contact"
+    },
+    "navCard": {
+        "name": "Jesus Sirit",
+        "role": "FullStack Developer"
+    },
+    "about": {
+        "title": "About me",
+        "first-text": "I'm a web developer focused on backend development, specializing in Java (Spring Boot) and Node.js with TypeScript. I build secure and scalable RESTful APIs, and I also have experience with frontend technologies like React and TailwindCSS. I'm skilled in working with relational databases such as PostgreSQL, MySQL, and SQLite, always applying best practices in data modeling.",
+        "second-text": "I'm passionate about solving complex problems, writing clean code, and continuously learning and improving"
+    },
+    "projectPage": {
+        "subtitle": "Portfolio",
+        "prepo": "My",
+        "title": "Creative Works",
+        "code": "Code"
+    },
+    "projects": {
+        "product_api": {
+          "title": "Product Management - API Rest",
+          "description": "This project is a RESTful API built with Spring Boot, designed for managing products, categories, users, and orders."
+        },
+        "medical_app": {
+          "title": "Medical Appointments Manager",
+          "description": "This is a web application developed using Spring Boot that allows patients to register, view available doctors, and schedule or cancel medical appointments."
+        },
+        "chat_app": {
+          "title": "Real-Time Chat Application",
+          "description": "Real-time messaging app for public rooms and private chats. Built the backend with Node.js + TypeScript, Express, Socket.IO and the frontend with React + TailwindCSS"
+        }
+      },
+      "skills": {
+        "title": "Skills"
+    },
+    "contact": {
+        "title": "Let's Connect",
+        "labelName": "Name",
+        "placeholderName": "Your name",
+        "labelEmail": "Email",
+        "placeholderEmail": "your.email@example.com",
+        "labelMessage": "Message",
+        "placeholderMessage": "Your message here...",
+        "sendMessageBtn": "Send message",
+        "sendingMessageBtn": "Sending...",
+        "msgError": "Failed to send message. Please try again.",
+        "msgSuccess:": "Message sent successfully!"
+    }
+}

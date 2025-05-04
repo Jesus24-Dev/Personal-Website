@@ -1,22 +1,19 @@
 [
   {
-    "title": "Product Management - API Rest",
+    "id": "product_api",
     "category": "Backend",
-    "description": "This project is a RESTful API built with Spring Boot, designed for managing products, categories, users, and orders.",
     "link": "https://github.com/Jesus24-Dev/SpringBoot-APIRest-ProductManagement",
     "imageUrl": "/img/projects/apirest.webp"
   },
   {
-    "title": "Medical Appointments Manager",
+    "id": "medical_app",
     "category": "Backend",
-    "description": "This is a web application developed using Spring Boot that allows patients to register, view available doctors, and schedule or cancel medical appointments.",
     "link": "https://github.com/Jesus24-Dev/SpringBoot-Medical-Appointments-Manager",
     "imageUrl": "/img/projects/medical.webp"
   },
   {
-    "title": "Real-Time Chat Application",
+    "id": "chat_app",
     "category": "FullStack",
-    "description": "Real-time messaging app for public rooms and private chats. Built the backend with Node.js + TypeScript, Express, Socket.IO and the frontend with React + TailwindCSS", 
     "link": "https://github.com/Jesus24-Dev/real-time-chat-ReactTS-Socket.io",
     "imageUrl": "/img/projects/chat.webp"
   }

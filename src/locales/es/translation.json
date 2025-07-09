@@ -41,6 +41,10 @@
         "chat_app": {
           "title": "Aplicación de Chat en Tiempo Real",
           "description": "App de mensajería en tiempo real para salas públicas y chats privados. Backend con Node.js + TypeScript, Express, Socket.IO y frontend con React + TailwindCSS."
+        },
+        "attendance_api": {
+          "title": "Sistema de Asistencia de Empleados - API Rest",
+          "description": "API RESTful construida con Spring Boot para gestionar la asistencia de empleados dentro de una empresa"
         }
       },
     "skills": {

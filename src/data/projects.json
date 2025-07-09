@@ -16,5 +16,11 @@
     "category": "FullStack",
     "link": "https://github.com/Jesus24-Dev/real-time-chat-ReactTS-Socket.io",
     "imageUrl": "/img/projects/chat.webp"
+  },
+  {
+    "id": "attendance_api",
+    "category": "Backend",
+    "link": "https://github.com/Jesus24-Dev/SpringBoot-Employee-Attendance-System",
+    "imageUrl": "/img/projects/attendance-api.webp"
   }
 ]

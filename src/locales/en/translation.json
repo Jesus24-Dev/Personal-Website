@@ -40,6 +40,10 @@
         "chat_app": {
           "title": "Real-Time Chat Application",
           "description": "Real-time messaging app for public rooms and private chats. Built the backend with Node.js + TypeScript, Express, Socket.IO and the frontend with React + TailwindCSS"
+        },
+        "attendance_api": {
+          "title": "Employee Attendance System - API Rest",
+          "description": "This is a RESTful API built with Spring Boot for managing employee attendance within a company."
         }
       },
       "skills": {

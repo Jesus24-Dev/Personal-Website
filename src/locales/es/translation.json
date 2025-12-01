@@ -2,9 +2,9 @@
     "header": {
         "welcome": "Hola mundo!",
         "presentation": "Soy",
-        "description": "Desarrollador",
+        "description": "Especialista en",
         "name": "Jesús Sirit",
-        "role": "FullStack"
+        "role": "Automatización"
     },
 
     "nav": {
@@ -16,17 +16,17 @@
       },
       "navCard": {
           "name": "Jesús Sirit",
-          "role": "Desarrollador FullStack"
+          "role": "Especialista en Automatización"
       },
       "about": {
         "title": "Sobre mí",
-        "first-text": "Soy un desarrollador web enfocado en el desarrollo backend, especializado en Java (Spring Boot) y Node.js con TypeScript. Construyo APIs RESTful seguras y escalables, y también tengo experiencia con tecnologías frontend como React y TailwindCSS. Tengo destreza en trabajar con bases de datos relacionales como PostgreSQL, MySQL y SQLite, siempre aplicando las mejores prácticas en modelado de datos.",
-        "second-text": "Me apasiona resolver problemas complejos, escribir código limpio y aprender y mejorar continuamente."
+        "first-text": "Especialista en Automatización enfocado en optimizar procesos, integrar sistemas y mejorar la eficiencia operativa a través de la automatización. Construyo flujos de trabajo automatizados de extremo a extremo utilizando Make, Zapier y n8n, respaldado por una sólida experiencia en desarrollo web y backend con JavaScript/TypeScript, Python, Java y Spring Boot.",
+        "second-text": "Combino el análisis preciso, el pensamiento estructurado y la ejecución ágil para diseñar soluciones efectivas"
     },
     "projectPage": {
         "subtitle": "Portafolio",
         "prepo": "Mis",
-        "title": "Trabajos Creativos",
+        "title": "Proyectos",
         "code": "Código"
     },
     "projects": {

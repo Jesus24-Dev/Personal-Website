@@ -3,20 +3,15 @@ import SkillCard from './SkillCard';
 import { useTranslation } from 'react-i18next';
 
 const techData = [
+    { img: 'python', name: 'Python' },
+    { img: 'make', name: 'Make' },
+    { img: 'zapier', name: 'Zapier' },
+    { img: 'n8n', name: 'n8n' },
     { img: 'java', name: 'Java' },
-    { img: 'spring', name: 'Spring Boot' },
-    { img: 'node', name: 'NodeJS' },
-    { img: 'express', name: 'ExpressJS' },
     { img: 'typescript', name: 'TypeScript' },
     { img: 'react', name: 'React' },
-    { img: 'tailwind', name: 'TailwindCSS' },
-    { img: 'js', name: 'JavaScript' },
-    { img: 'css', name: 'CSS' },
-    { img: 'html', name: 'HTML' },
     { img: 'git', name: 'Git' },
-    { img: 'postgresql', name: 'PostgreSQL' },
     { img: 'mysql', name: 'MySQL' },
-    { img: 'sqlite', name: 'SQLite' }
 ];
 
 const containerVariants = {
@@ -83,7 +78,7 @@ export default function Section() {
       </motion.header>
       
       <motion.div 
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-2.5 md:gap-3"
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-2 sm:gap-2.5 md:gap-3"
         variants={containerVariants}
       >
         {techData.map((tech, index) => (

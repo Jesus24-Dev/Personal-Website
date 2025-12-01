@@ -1,7 +1,7 @@
 import Icon from './Icon';
 import { motion } from 'framer-motion';
 
-const icons = ['java', 'spring', 'ts', 'node', 'react', 'tailwind', 'git'];
+const icons = ['make', 'n8n', 'zapier', 'ts', 'python', 'java'];
 
 export default function IconList() {
   return (

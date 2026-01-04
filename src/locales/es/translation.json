@@ -45,6 +45,10 @@
         "attendance_api": {
           "title": "Sistema de Asistencia de Empleados - API Rest",
           "description": "API RESTful construida con Spring Boot para gestionar la asistencia de empleados dentro de una empresa"
+        },
+        "event_driven_webhook": {
+          "title": "Procesamiento de Webhooks Basado en Eventos y Orquestación de Acciones",
+          "description": "Procesador centralizado de webhooks que normaliza eventos entrantes y ejecuta acciones en Google Sheets, Todoist y HubSpot con notificaciones en Slack."
         }
       },
     "skills": {
@@ -62,5 +66,44 @@
         "sendingMessageBtn": "Enviando...",
         "msgError": "Error al enviar el correo. Inténtalo de nuevo",
         "msgSuccess:": "!Mensaje enviado exitosamente!"
-    }
+    },
+    "workflows_texts": {
+      "context": "Contexto del problema",
+      "objetive": "Objetivo del workflow",
+      "flow": "Flujo de automatización",
+      "stack": "Tecnologías utilizadas",
+      "result": "Resultado y valor generado"
+    },
+    "workflows": {
+      "event_driven_webhook": {
+        "title": "Procesamiento de Webhooks Basado en Eventos y Orquestación de Acciones",
+        "category": "Automatización",
+        "shortDescription": "Procesador centralizado de webhooks que normaliza eventos entrantes y ejecuta acciones en Google Sheets, Todoist y HubSpot con notificaciones en Slack.",
+        "longDescription": "Este workflow, construido completamente en n8n, procesa eventos de contacto entrantes desde múltiples fuentes (formularios, aplicaciones, plataformas), normaliza los datos, dirige dinámicamente los eventos al sistema correspondiente y envía notificaciones contextuales en Slack para visibilidad operacional completa.",
+        "context": "Antes, la información de contacto entrante desde diversas fuentes se procesaba manualmente, lo que generaba demoras, inconsistencias en el formato y falta de visibilidad sobre dónde se almacenaban los datos o qué acciones se ejecutaban. Este workflow centraliza y automatiza todo el proceso de manera integral.",
+        "objective": "Automatizar la ingestión, normalización, direccionamiento y notificación de eventos de contacto para mejorar la precisión, eficiencia y visibilidad operacional, reduciendo la intervención manual.",
+        "flow": [
+          "El webhook recibe la información de contacto entrante (nombre, email, empresa, tamaño por empleados) y su fuente (FORM, APP, PLATFORM).",
+          "Nodo Edit Fields normaliza los datos: emails en minúsculas, nombres capitalizados, empresa y fuente en mayúsculas.",
+          "Nodo Switch direcciona los eventos según la fuente:",
+          "→ FORM: Guardar la información de contacto en Google Sheets.",
+          "→ APP: Crear una tarea en Todoist. Prioridad alta si la empresa tiene más de 1000 empleados, media en caso contrario.",
+          "→ PLATFORM: Crear un nuevo contacto en HubSpot.",
+          "Nodo Slack envía una notificación con detalles de la nueva solicitud y dónde se almacenaron los datos."
+        ],
+        "stack": [
+          "n8n",
+          "Google Sheets API",
+          "Todoist API",
+          "HubSpot API",
+          "Slack API",
+          "JavaScript"
+        ],
+        "result": "Redujo el tiempo de procesamiento manual, aseguró información de contacto consistente y normalizada, mejoró la visibilidad operacional con notificaciones en Slack y priorizó dinámicamente las tareas en Todoist según el tamaño de la empresa.",
+        "repo": "https://github.com/your-user/event-driven-webhook",
+        "image": "/img/workflows/event_driven_webhook.png",
+        "imageAlt": "Diagrama que muestra el workflow de Webhook basado en eventos en n8n con rutas y notificaciones en Slack"
+      }
+  }
 }
+

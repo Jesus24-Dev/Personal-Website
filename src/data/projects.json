@@ -22,5 +22,10 @@
     "category": "Backend",
     "link": "https://github.com/Jesus24-Dev/SpringBoot-Employee-Attendance-System",
     "imageUrl": "/img/projects/attendance-api.webp"
+  }, {
+    "id": "event_driven_webhook",
+    "category": "Automation",
+    "link": "./workflows/event_driven_webhook",
+    "imageUrl": "/img/projects/event_driven_webhook.png"
   }
 ]

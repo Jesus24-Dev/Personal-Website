@@ -69,17 +69,9 @@ export default function ProjectCard({id, category, link, imageUrl }: ProjectCard
           transition={{ delay: 0.3 }}
         >
             <div className="flex flex-wrap justify-end gap-2 sm:gap-3">
-          {/* <a 
-            href={link} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-lime-50 font-medium bg-lime-600 hover:bg-lime-700 active:bg-lime-800 py-1.5 px-3 sm:py-2 sm:px-4 rounded-lg text-xs sm:text-sm transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
-          >
-            View Demo
-          </a> */}
           <a 
             href={link} 
-            target="_blank" 
+            target={category !== "Automation" ? "_blank" : "_self"}
             rel="noopener noreferrer"
             className="font-roboto text-white font-medium bg-transparent border border-lime-400 hover:bg-lime-600/30 hover:border-lime-600 active:bg-lime-700/40 py-1.5 px-3 sm:py-2 sm:px-4 rounded-lg text-xs sm:text-sm transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 flex items-center gap-1"
           >

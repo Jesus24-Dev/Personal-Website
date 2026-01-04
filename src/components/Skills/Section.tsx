@@ -3,12 +3,12 @@ import SkillCard from './SkillCard';
 import { useTranslation } from 'react-i18next';
 
 const techData = [
-    { img: 'python', name: 'Python' },
+    { img: 'n8n', name: 'n8n' },
+    { img: 'typescript', name: 'TypeScript' },
     { img: 'make', name: 'Make' },
     { img: 'zapier', name: 'Zapier' },
-    { img: 'n8n', name: 'n8n' },
+    { img: 'python', name: 'Python' },   
     { img: 'java', name: 'Java' },
-    { img: 'typescript', name: 'TypeScript' },
     { img: 'react', name: 'React' },
     { img: 'git', name: 'Git' },
     { img: 'mysql', name: 'MySQL' },

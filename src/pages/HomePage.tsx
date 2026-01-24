@@ -2,67 +2,68 @@
 import { useState, useEffect, useCallback } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Home from '../components/pages/Home';
-import About from '../components/pages/About'; 
-import Projects from '../components/pages/Projects'; 
-import Skills from '../components/pages/Skills'; 
-import Navbar from '../components/Header/Navbar/Navbar';
+import About from '../components/pages/About';
+import Projects from '../components/pages/Projects';
+import Skills from '../components/pages/Skills';
 import Contact from '../components/pages/Contact';
+import Navbar from '../components/Header/Navbar/Navbar';
 
 export type SectionType = 'Home' | 'About' | 'Projects' | 'Skills' | 'Contact';
 
+const sections: SectionType[] = [
+  'Home',
+  'About',
+  'Projects',
+  'Skills',
+  'Contact',
+];
+
 export default function HomePage() {
   const [activeSection, setActiveSection] = useState<SectionType>('Home');
-  const [isScrolling, setIsScrolling] = useState(false);
 
   const scrollToSection = useCallback((id: SectionType) => {
     const element = document.getElementById(id);
-    if (element) {
-      setIsScrolling(true);
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-      setTimeout(() => {
-        setActiveSection(id);
-        setIsScrolling(false);
-      }, 1000);
-    }
+    element?.scrollIntoView({ behavior: 'smooth' });
   }, []);
 
   useEffect(() => {
-    if (isScrolling) return;
-
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
-      const sections: SectionType[] = ['Home', 'About', 'Projects', 'Skills'];
-      
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
-            break;
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id as SectionType);
           }
-        }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '-40% 0px -40% 0px',
+        threshold: 0,
       }
-    };
+    );
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isScrolling]);
+    sections.forEach(section => {
+      const element = document.getElementById(section);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="relative">
-      <Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
-      
-      <main className="snap-y snap-mandatory h-screen overflow-y-auto">
+      <Navbar
+        activeSection={activeSection}
+        scrollToSection={scrollToSection}
+      />
+
+      <main className="overflow-x-hidden">
         <AnimatePresence>
           <Home id="Home" />
-          <About id="About" /> 
-          <Projects id="Projects" />    
-          <Skills id="Skills" /> 
-          <Contact id="Contact"/>
+          <About id="About" />
+          <Projects id="Projects" />
+          <Skills id="Skills" />
+          <Contact id="Contact" />
         </AnimatePresence>
       </main>
     </div>

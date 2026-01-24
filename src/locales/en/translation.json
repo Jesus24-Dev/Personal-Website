@@ -48,6 +48,10 @@
         "event_driven_webhook": {
           "title": "Event-Driven Webhook Processing & Action Orchestration",
           "description": "Centralized webhook processor that normalizes incoming events and triggers actions across Google Sheets, Todoist, and HubSpot with Slack notifications."
+        },
+        "lead_intake_scoring_orchestration": {
+            "title": "Lead Intake, Validation & Intelligent Orchestration",
+            "description": "End-to-end lead processing workflow that validates, normalizes, scores, and routes leads across HubSpot, Google Sheets, Gmail, and Slack."
         }
       },
       "skills": {
@@ -68,48 +72,92 @@
     },
     "workflows_texts": {
       "context": "Problem context",
-      "objetive": "Workflow objective",
+      "objective": "Workflow objective",
       "flow": "Automation flow",
       "stack": "Technologies used",
       "result": "Result and value generated"
     },
 
-    "workflows": {
-      "event_driven_webhook": {
-        "title": "Event-Driven Webhook Processing & Action Orchestration",
-        "category": "Automation",
-        "shortDescription": "Centralized webhook processor that normalizes incoming events and triggers actions across Google Sheets, Todoist, and HubSpot with Slack notifications.",
-        "longDescription": "This workflow, built entirely in n8n, processes incoming contact events from multiple sources (forms, applications, platforms), normalizes the data, dynamically routes events to the appropriate system, and sends contextual notifications to Slack for full operational visibility.",
+    "workflows": [
+    {
+      "id": "event_driven_webhook",
+      "title": "Event-Driven Webhook Processing & Action Orchestration",
+      "category": "Automation",
+      "shortDescription": "Centralized webhook processor that normalizes incoming events and triggers actions across Google Sheets, Todoist, and HubSpot with Slack notifications.",
+      "longDescription": "This workflow, built entirely in n8n, processes incoming contact events from multiple sources (forms, applications, platforms), normalizes the data, dynamically routes events to the appropriate system, and sends contextual notifications to Slack for full operational visibility.",
 
-        "context": "Previously, incoming contact information from various sources had to be manually processed, leading to delays, inconsistent formatting, and a lack of visibility into where data was stored or actions taken. This workflow centralizes the process and automates it end-to-end.",
+      "context": "Previously, incoming contact information from various sources had to be manually processed, leading to delays, inconsistent formatting, and a lack of visibility into where data was stored or actions taken. This workflow centralizes the process and automates it end-to-end.",
 
-        "objective": "Automate the ingestion, normalization, routing, and notification of contact events to improve accuracy, efficiency, and operational visibility, reducing manual intervention.",
+      "objective": "Automate the ingestion, normalization, routing, and notification of contact events to improve accuracy, efficiency, and operational visibility, reducing manual intervention.",
 
-        "flow": [
-          "Webhook receives incoming contact information (name, email, company, employee size) and source (FORM, APP, PLATFORM).",
-          "Edit Fields node normalizes data: emails to lowercase, names capitalized, company and source in uppercase.",
-          "Switch node routes events based on source:",
-          "→ FORM: Save contact information to Google Sheets.",
-          "→ APP: Create a task in Todoist. Priority is high if company has more than 1000 employees, medium otherwise.",
-          "→ PLATFORM: Create a new contact in HubSpot.",
-          "Slack node sends a notification with details about the new submission and its storage destination."
-        ],
+      "flow": [
+        "Webhook receives incoming contact information (name, email, company, employee size) and source (FORM, APP, PLATFORM).",
+        "Edit Fields node normalizes data: emails to lowercase, names capitalized, company and source in uppercase.",
+        "Switch node routes events based on source:",
+        "FORM: Save contact information to Google Sheets.",
+        "APP: Create a task in Todoist. Priority is high if company has more than 1000 employees, medium otherwise.",
+        "PLATFORM: Create a new contact in HubSpot.",
+        "Slack node sends a notification with details about the new submission and its storage destination."
+      ],
 
-        "stack": [
-          "n8n",
-          "Google Sheets API",
-          "Todoist API",
-          "HubSpot API",
-          "Slack API",
-          "JavaScript"
-        ],
+      "stack": [
+        "n8n",
+        "Google Sheets API",
+        "Todoist API",
+        "HubSpot API",
+        "Slack API",
+        "JavaScript"
+      ],
 
-        "result": "Reduced manual data processing time, ensured consistent and normalized contact information, improved operational visibility with Slack notifications, and dynamically prioritized tasks in Todoist based on company size.",
+      "result": "Reduced manual data processing time, ensured consistent and normalized contact information, improved operational visibility with Slack notifications, and dynamically prioritized tasks in Todoist based on company size.",
 
-        "repo": "https://github.com/your-user/event-driven-webhook",
-        "image": "/img/workflows/event_driven_webhook.png",
-        "imageAlt": "Diagram showing the Event-Driven Webhook workflow in n8n with routing and Slack notifications"
-      }
+      "repo": "https://github.com/your-user/event-driven-webhook",
+      "image": "/img/workflows/event_driven_webhook.png",
+      "imageAlt": "Diagram showing the Event-Driven Webhook workflow in n8n with routing and Slack notifications"
+    },
+    {
+    "id": "lead_intake_scoring_orchestration",
+    "title": "Lead Intake, Validation & Intelligent Orchestration",
+    "category": "automation",
+    "shortDescription": "End-to-end lead processing workflow that validates, normalizes, scores, and routes leads across HubSpot, Google Sheets, Gmail, and Slack.",
+    "longDescription": "This workflow, built with n8n, automates the complete lifecycle of incoming leads. It validates and normalizes data, detects duplicates, calculates lead scores, and dynamically routes each lead to the appropriate action based on business rules, ensuring efficiency, data quality, and operational visibility.",
 
+    "context": "Incoming leads from different sources were previously processed manually, leading to inconsistent data, duplicate records, delayed responses, and limited visibility for the sales team. Error handling was minimal, making troubleshooting difficult and time-consuming.",
+
+    "objective": "Automate lead ingestion, validation, normalization, scoring, and routing while providing reliable error handling, logging, and real-time notifications to improve sales efficiency and data quality.",
+
+    "flow": [
+      "Webhook receives incoming lead data from external sources.",
+      "Code node validates required fields and data formats; invalid requests receive an immediate error response.",
+      "Data is normalized: emails are converted to lowercase, country codes to uppercase, and names to title case.",
+      "Google Sheets node checks if the email already exists to prevent duplicate leads.",
+      "If a duplicate is detected, the workflow logs the event and returns a duplicate response.",
+      "A Code node calculates the lead score based on predefined business rules.",
+      "A Switch node routes the lead based on its score:",
+      "Cold leads (score < 40): send a confirmation email via Gmail.",
+      "Warm leads (score 41–80): create a contact in HubSpot.",
+      "Hot leads (score > 80): create a contact in HubSpot and automatically generate a ticket.",
+      "The lead is stored in Google Sheets with its lead type and timestamp.",
+      "A success response is sent through the webhook and a notification is sent to Slack.",
+      "Unhandled errors are captured by an Error Trigger and logged in Google Sheets with execution details."
+    ],
+
+    "stack": [
+      "n8n",
+      "JavaScript",
+      "Google Sheets API",
+      "HubSpot API",
+      "Gmail API",
+      "Slack API"
+    ],
+
+    "result": "The workflow reduces manual lead handling, ensures consistent and validated data, prevents duplicates, improves response times for high-value leads, and provides full visibility through structured logging and Slack notifications.",
+
+    "repo": "https://github.com/your-user/lead-intake-scoring-orchestration",
+    "image": "/img/workflows/lead_intake_scoring_orchestration.png",
+    "imageAlt": "Diagram of the Lead Intake and Scoring workflow in n8n showing validation, routing, and integrations"
   }
+
+  ]
+
 }

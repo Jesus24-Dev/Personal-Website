@@ -49,7 +49,11 @@
         "event_driven_webhook": {
           "title": "Procesamiento de Webhooks Basado en Eventos y Orquestación de Acciones",
           "description": "Procesador centralizado de webhooks que normaliza eventos entrantes y ejecuta acciones en Google Sheets, Todoist y HubSpot con notificaciones en Slack."
-        }
+        },
+          "lead_intake_scoring_orchestration": {
+            "title": "Ingesta de Leads, Validación y Orquestación Inteligente",
+            "description": "Workflow de procesamiento de leads de extremo a extremo que valida, normaliza, puntúa y enruta información usando HubSpot, Google Sheets, Gmail y Slack."
+        }        
       },
     "skills": {
         "title": "Habilidades"
@@ -69,13 +73,14 @@
     },
     "workflows_texts": {
       "context": "Contexto del problema",
-      "objetive": "Objetivo del workflow",
+      "objective": "Objetivo del workflow",
       "flow": "Flujo de automatización",
       "stack": "Tecnologías utilizadas",
       "result": "Resultado y valor generado"
     },
-    "workflows": {
-      "event_driven_webhook": {
+    "workflows": [
+      {
+        "id": "event_driven_webhook",
         "title": "Procesamiento de Webhooks Basado en Eventos y Orquestación de Acciones",
         "category": "Automatización",
         "shortDescription": "Procesador centralizado de webhooks que normaliza eventos entrantes y ejecuta acciones en Google Sheets, Todoist y HubSpot con notificaciones en Slack.",
@@ -103,7 +108,49 @@
         "repo": "https://github.com/your-user/event-driven-webhook",
         "image": "/img/workflows/event_driven_webhook.png",
         "imageAlt": "Diagrama que muestra el workflow de Webhook basado en eventos en n8n con rutas y notificaciones en Slack"
-      }
-  }
+      },
+      {
+      "id": "lead_intake_scoring_orchestration",
+      "title": "Ingesta de Leads, Validación y Orquestación Inteligente",
+      "category": "automation",
+      "shortDescription": "Workflow de procesamiento de leads de extremo a extremo que valida, normaliza, puntúa y enruta información usando HubSpot, Google Sheets, Gmail y Slack.",
+      "longDescription": "Este workflow, construido con n8n, automatiza todo el ciclo de vida de los leads entrantes. Valida y normaliza los datos, detecta duplicados, calcula el lead scoring y enruta dinámicamente cada lead según reglas de negocio, garantizando eficiencia, calidad de datos y visibilidad operativa.",
+
+      "context": "Los leads provenientes de distintas fuentes se procesaban manualmente, lo que generaba datos inconsistentes, registros duplicados, respuestas tardías y poca visibilidad para el equipo comercial. El manejo de errores era limitado, dificultando el monitoreo y la depuración.",
+
+      "objective": "Automatizar la ingesta, validación, normalización, scoring y enrutamiento de leads, incorporando manejo de errores confiable, registro de eventos y notificaciones en tiempo real para mejorar la eficiencia comercial y la calidad de los datos.",
+
+      "flow": [
+        "Un webhook recibe los datos del lead desde fuentes externas.",
+        "Un nodo de Código valida los campos obligatorios y formatos; si hay errores, se responde inmediatamente.",
+        "Los datos se normalizan: emails en minúsculas, códigos de país en mayúsculas y nombres en formato título.",
+        "Un nodo de Google Sheets verifica si el email ya existe para evitar duplicados.",
+        "Si se detecta un duplicado, el workflow registra el evento y retorna una respuesta de error.",
+        "Un nodo de Código calcula el lead scoring según reglas de negocio predefinidas.",
+        "Un nodo Switch enruta el lead según su puntuación:",
+        "Leads Cold (score < 40): se envía un correo de confirmación por Gmail.",
+        "Leads Warm (score 41–80): se crea un contacto en HubSpot.",
+        "Leads Hot (score > 80): se crea un contacto en HubSpot y se genera un ticket automáticamente.",
+        "El lead se guarda en Google Sheets junto con su tipo y timestamp.",
+        "Se envía una respuesta exitosa por el webhook y una notificación a Slack.",
+        "Los errores no controlados son capturados por un Error Trigger y registrados en Google Sheets con detalles de la ejecución."
+      ],
+
+      "stack": [
+        "n8n",
+        "JavaScript",
+        "Google Sheets API",
+        "HubSpot API",
+        "Gmail API",
+        "Slack API"
+      ],
+
+      "result": "El workflow reduce el manejo manual de leads, garantiza datos consistentes y validados, evita duplicados, mejora los tiempos de respuesta para leads de alto valor y proporciona visibilidad completa mediante logs estructurados y notificaciones en Slack.",
+
+      "repo": "https://github.com/your-user/lead-intake-scoring-orchestration",
+      "image": "/img/workflows/lead_intake_scoring_orchestration.png",
+      "imageAlt": "Diagrama del workflow de ingesta y scoring de leads en n8n con validación, enrutamiento e integraciones"
+    }
+    ]
 }
 

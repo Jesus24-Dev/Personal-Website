@@ -27,5 +27,10 @@
     "category": "Automation",
     "link": "./workflows/event_driven_webhook",
     "imageUrl": "/img/projects/event_driven_webhook.png"
+  }, {
+    "id": "lead_intake_scoring_orchestration",
+    "category": "Automation",
+    "link": "./workflows/lead_intake_scoring_orchestration",
+    "imageUrl": "/img/projects/lead_intake_scoring_orchestration.png"
   }
 ]

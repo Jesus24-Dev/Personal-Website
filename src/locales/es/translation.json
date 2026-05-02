@@ -53,7 +53,16 @@
           "lead_intake_scoring_orchestration": {
             "title": "Ingesta de Leads, Validación y Orquestación Inteligente",
             "description": "Workflow de procesamiento de leads de extremo a extremo que valida, normaliza, puntúa y enruta información usando HubSpot, Google Sheets, Gmail y Slack."
-        }        
+        }, 
+        "data_transformation_pipeline": {
+          "title": "Pipeline de Transformación y Normalización de Datos",
+          "description": "Sistema robusto que procesa JSON sucio, valida, transforma y normaliza datos, generando salidas limpias con manejo de errores, logs estructurados y exportación a múltiples formatos."
+        },
+        "focus_tracker_webhook_service": {
+          "title": "Focus Tracker AI",
+          "description": "Servicio de webhook que recibe datos de seguimiento de enfoque, los procesa con IA para generar insights personalizados y los envía a una aplicación de productividad para mejorar la gestión del tiempo."
+        }       
+        
       },
     "skills": {
         "title": "Habilidades"

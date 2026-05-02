@@ -9,7 +9,7 @@ function NavbarCard() {
         <aside className="group flex items-center gap-3 w-fit px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer" onClick={goToGit}>
             <div className="relative">
                 <img 
-                    src="/img/Avatar.png" 
+                    src="/img/me.jpg" 
                     alt="Jesus24-Dev" 
                     className="w-12 h-12 rounded-full border-2 border-lime-400/30 group-hover:border-lime-400/80 transition-all duration-500 object-cover shadow-lg"
                 />

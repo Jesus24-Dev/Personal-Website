@@ -32,5 +32,16 @@
     "category": "Automation",
     "link": "./workflows/lead_intake_scoring_orchestration",
     "imageUrl": "/img/projects/lead_intake_scoring_orchestration.png"
+  }, {
+    "id": "data_transformation_pipeline",
+    "category": "Automation",
+    "link": "https://github.com/Jesus24-Dev/automation-data-pipeline-typescript",
+    "imageUrl": "/img/projects/data_transformation_pipeline.png"
+  }, 
+    {
+    "id": "focus_tracker_webhook_service",
+    "category": "Automation",
+    "link": "https://github.com/Jesus24-Dev/Focus-Tracker-AI",
+    "imageUrl": "/img/projects/focus_tracker_webhook_service.png"
   }
 ]

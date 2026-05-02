@@ -50,9 +50,17 @@
           "description": "Centralized webhook processor that normalizes incoming events and triggers actions across Google Sheets, Todoist, and HubSpot with Slack notifications."
         },
         "lead_intake_scoring_orchestration": {
-            "title": "Lead Intake, Validation & Intelligent Orchestration",
-            "description": "End-to-end lead processing workflow that validates, normalizes, scores, and routes leads across HubSpot, Google Sheets, Gmail, and Slack."
-        }
+          "title": "Lead Intake, Validation & Intelligent Orchestration",
+          "description": "End-to-end lead processing workflow that validates, normalizes, scores, and routes leads across HubSpot, Google Sheets, Gmail, and Slack."
+        },
+        "data_transformation_pipeline": {
+          "title": "Data Transformation and Normalization Pipeline",
+          "description": "Robust system that processes dirty JSON, validates, transforms, and normalizes data, generating clean outputs with error handling, structured logging, and export to multiple formats."
+        },
+        "focus_tracker_webhook_service": {
+          "title": "Focus Tracker AI",
+          "description": "Production-oriented webhook microservice that securely validates incoming events using HMAC signatures, processes focus session data, persists structured logs and events, and integrates with external APIs while handling failures gracefully."
+        }       
       },
       "skills": {
         "title": "Skills"

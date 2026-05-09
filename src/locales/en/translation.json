@@ -60,7 +60,11 @@
         "focus_tracker_webhook_service": {
           "title": "Focus Tracker AI",
           "description": "Production-oriented webhook microservice that securely validates incoming events using HMAC signatures, processes focus session data, persists structured logs and events, and integrates with external APIs while handling failures gracefully."
-        }       
+        },
+        "secure_focus_tracker_automation": {
+          "title": "Secure Focus Tracker Automation & Workflow Orchestration",
+          "description": "End-to-end lead processing workflow that validates, normalizes, scores, and routes leads across HubSpot, Google Sheets, Gmail, and Slack."
+        }         
       },
       "skills": {
         "title": "Skills"
@@ -119,7 +123,7 @@
 
       "result": "Reduced manual data processing time, ensured consistent and normalized contact information, improved operational visibility with Slack notifications, and dynamically prioritized tasks in Todoist based on company size.",
 
-      "repo": "https://github.com/your-user/event-driven-webhook",
+      "repo": "https://github.com/Jesus24-Dev/event-driven-webhook",
       "image": "/img/workflows/event_driven_webhook.png",
       "imageAlt": "Diagram showing the Event-Driven Webhook workflow in n8n with routing and Slack notifications"
     },
@@ -161,10 +165,54 @@
 
     "result": "The workflow reduces manual lead handling, ensures consistent and validated data, prevents duplicates, improves response times for high-value leads, and provides full visibility through structured logging and Slack notifications.",
 
-    "repo": "https://github.com/your-user/lead-intake-scoring-orchestration",
+    "repo": "https://github.com/Jesus24-Dev/lead-intake-scoring-orchestration",
     "image": "/img/workflows/lead_intake_scoring_orchestration.png",
     "imageAlt": "Diagram of the Lead Intake and Scoring workflow in n8n showing validation, routing, and integrations"
-  }
+  },
+  {
+  "id": "secure_focus_tracker_automation",
+  "title": "Secure Focus Tracker Automation & Workflow Orchestration",
+  "category": "automation",
+  "shortDescription": "Event-driven automation workflow that validates, normalizes, signs, and routes requests securely between external clients, a signature service, and a focus tracking API.",
+  "longDescription": "This workflow, built with n8n, orchestrates secure communication between external systems and backend services through HMAC-based request signing, payload normalization, retry mechanisms, centralized logging, and workflow-level error handling. The automation validates incoming requests, generates cryptographic signatures through a dedicated signature microservice, forwards signed requests to the Focus Tracker API, logs operational events into Notion, and handles failures through dedicated error branches and workflow triggers.",
+
+  "context": "The Focus Tracker ecosystem required a reliable automation layer capable of securely orchestrating communication between multiple services while maintaining operational visibility and resilience. Manual request handling and the lack of centralized monitoring made debugging, validation, and error tracking inefficient and difficult to scale.",
+
+  "objective": "Build a secure and resilient orchestration workflow capable of validating incoming webhook requests, normalizing data, generating HMAC signatures, communicating securely with backend APIs, handling transient failures through retries, and providing centralized operational logging and error management.",
+
+  "flow": [
+    "Webhook receives incoming focus tracking requests from external clients.",
+    "A validation node verifies that all required fields are present and correctly formatted.",
+    "Invalid requests immediately trigger an error response and generate operational logs in Notion.",
+    "Incoming data is normalized into a standardized internal structure before processing.",
+    "The workflow sends the normalized payload to a dedicated Signature Service responsible for generating HMAC signatures.",
+    "The Signature Service request includes retry logic with up to three attempts for transient failures.",
+    "If the Signature Service becomes unavailable, the workflow logs the failure into Notion and returns an error response through the webhook.",
+    "The signed payload is forwarded to the Focus Tracker API using the generated x-signature header.",
+    "Successful API responses trigger the creation of operational records in Notion.",
+    "A success message is sent to Slack to notify successful workflow execution.",
+    "The workflow responds back to the webhook caller with a success response.",
+    "Failed API requests generate structured logs in Notion and return descriptive error responses.",
+    "An Error Trigger captures unhandled workflow-level failures and stores execution details for operational debugging and monitoring."
+  ],
+
+  "stack": [
+    "n8n",
+    "JavaScript",
+    "Express.js",
+    "Node.js Crypto",
+    "Notion API",
+    "Slack API",
+    "Docker",
+    "PostgreSQL"
+  ],
+
+  "result": "The workflow provides a secure and resilient orchestration layer for the Focus Tracker ecosystem, reducing manual intervention, improving operational visibility, enabling secure API communication through HMAC signatures, and ensuring robust error handling through retries, centralized logging, and workflow-level monitoring.",
+
+  "repo": "https://github.com/Jesus24-Dev/focus-tracker-automation-workflow",
+  "image": "/img/workflows/focus-automation-workflow.png",
+  "imageAlt": "Diagram of the Secure Focus Tracker Automation workflow in n8n showing validation, HMAC signing, API orchestration, retries, logging, and error handling"
+}
 
   ]
 

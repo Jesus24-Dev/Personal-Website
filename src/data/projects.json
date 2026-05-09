@@ -43,5 +43,11 @@
     "category": "Automation",
     "link": "https://github.com/Jesus24-Dev/Focus-Tracker-AI",
     "imageUrl": "/img/projects/focus_tracker_webhook_service.png"
-  }
+  }, 
+  {
+    "id": "secure_focus_tracker_automation",
+    "category": "Automation",
+    "link": "./workflows/secure_focus_tracker_automation",
+    "imageUrl": "/img/projects/focus-automation-workflow.png"
+    }
 ]

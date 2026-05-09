@@ -61,7 +61,11 @@
         "focus_tracker_webhook_service": {
           "title": "Focus Tracker AI",
           "description": "Servicio de webhook que recibe datos de seguimiento de enfoque, los procesa con IA para generar insights personalizados y los envía a una aplicación de productividad para mejorar la gestión del tiempo."
-        }       
+        },
+        "secure_focus_tracker_automation": {
+          "title": "Automatización Segura y Orquestación de Focus Tracker",
+          "description": "Workflow orientado a eventos que valida, normaliza, firma y enruta solicitudes de forma segura entre clientes externos, un servicio de firmas y una API de seguimiento de enfoque."
+        }         
         
       },
     "skills": {
@@ -156,10 +160,54 @@
 
       "result": "El workflow reduce el manejo manual de leads, garantiza datos consistentes y validados, evita duplicados, mejora los tiempos de respuesta para leads de alto valor y proporciona visibilidad completa mediante logs estructurados y notificaciones en Slack.",
 
-      "repo": "https://github.com/your-user/lead-intake-scoring-orchestration",
+      "repo": "https://github.com/Jesus24-Dev/lead-intake-scoring-orchestration",
       "image": "/img/workflows/lead_intake_scoring_orchestration.png",
       "imageAlt": "Diagrama del workflow de ingesta y scoring de leads en n8n con validación, enrutamiento e integraciones"
-    }
+    },
+    {
+    "id": "secure_focus_tracker_automation",
+    "title": "Automatización Segura y Orquestación de Focus Tracker",
+    "category": "automation",
+    "shortDescription": "Workflow orientado a eventos que valida, normaliza, firma y enruta solicitudes de forma segura entre clientes externos, un servicio de firmas y una API de seguimiento de enfoque.",
+    "longDescription": "Este workflow, desarrollado con n8n, orquesta la comunicación segura entre sistemas externos y servicios backend mediante firmas HMAC, normalización de datos, mecanismos de reintento, logging centralizado y manejo de errores a nivel de workflow. La automatización valida solicitudes entrantes, genera firmas criptográficas a través de un microservicio dedicado, envía solicitudes firmadas a la API de Focus Tracker, registra eventos operacionales en Notion y maneja fallos mediante ramas de error y triggers especializados.",
+
+    "context": "El ecosistema de Focus Tracker requería una capa de automatización confiable capaz de orquestar de forma segura la comunicación entre múltiples servicios mientras mantenía visibilidad operacional y resiliencia. El manejo manual de solicitudes y la ausencia de monitoreo centralizado dificultaban el debugging, la validación y el seguimiento de errores.",
+
+    "objective": "Construir un workflow de orquestación seguro y resiliente capaz de validar solicitudes webhook entrantes, normalizar datos, generar firmas HMAC, comunicarse de forma segura con APIs backend, manejar fallos transitorios mediante reintentos y proporcionar logging centralizado y manejo de errores.",
+
+    "flow": [
+      "El webhook recibe solicitudes de seguimiento de enfoque desde clientes externos.",
+      "Un nodo de validación verifica que todos los campos requeridos estén presentes y correctamente formateados.",
+      "Las solicitudes inválidas generan inmediatamente una respuesta de error y un registro operacional en Notion.",
+      "Los datos entrantes son normalizados a una estructura interna estandarizada antes del procesamiento.",
+      "El workflow envía el payload normalizado a un Signature Service dedicado responsable de generar firmas HMAC.",
+      "La solicitud al Signature Service incluye lógica de reintentos con hasta tres intentos ante fallos transitorios.",
+      "Si el Signature Service no está disponible, el workflow registra el fallo en Notion y responde con un error al webhook.",
+      "El payload firmado es enviado a la API de Focus Tracker utilizando el header x-signature generado.",
+      "Las respuestas exitosas de la API generan registros operacionales en Notion.",
+      "Se envía una notificación a Slack indicando la ejecución exitosa del workflow.",
+      "El workflow responde exitosamente al cliente que realizó la solicitud webhook.",
+      "Las solicitudes fallidas generan logs estructurados en Notion y respuestas descriptivas de error.",
+      "Un Error Trigger captura errores no controlados del workflow y almacena detalles de ejecución para monitoreo y debugging."
+    ],
+
+    "stack": [
+      "n8n",
+      "JavaScript",
+      "Express.js",
+      "Node.js Crypto",
+      "Notion API",
+      "Slack API",
+      "Docker",
+      "PostgreSQL"
+    ],
+
+    "result": "El workflow proporciona una capa de orquestación segura y resiliente para el ecosistema Focus Tracker, reduciendo intervención manual, mejorando la visibilidad operacional, habilitando comunicación segura mediante firmas HMAC y garantizando manejo robusto de errores a través de reintentos, logging centralizado y monitoreo del workflow.",
+
+    "repo": "https://github.com/Jesus24-Dev/focus-tracker-automation-workflow",
+    "image": "/img/workflows/focus-automation-workflow.png",
+    "imageAlt": "Diagrama del workflow Secure Focus Tracker Automation en n8n mostrando validación, firmas HMAC, orquestación de APIs, reintentos, logging y manejo de errores"
+  }
     ]
 }
 
